@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Hardik Goel — AI & Data Architect | GenAI Systems Builder | MLOps Platform Owner | Bangalore, India">
+<title>Hardik Goel — AI & Data Architect</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.34.0/tabler-icons.min.css">
+<style>
+:root{
+  --bg:#06101e;--bg2:#0b1828;--bg3:#101f33;--bg4:#16283e;
+  --blue:#4a8cf7;--blue-d:rgba(74,140,247,.13);
+  --teal:#2dd4bf;--teal-d:rgba(45,212,191,.13);
+  --amber:#f5a623;--amber-d:rgba(245,166,35,.13);
+  --rose:#f4637a;--rose-d:rgba(244,99,122,.13);
+  --purple:#a78bfa;--purple-d:rgba(167,139,250,.13);
+  --text:#ccd8eb;--text2:#7e94b0;--text3:#435165;
+  --bdr:rgba(255,255,255,.07);--bdr2:rgba(255,255,255,.12);
+  --r:10px;--r2:14px;--r3:20px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden;font-size:15px}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+
+/* ── NAV ───────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  height:56px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 clamp(1rem,5vw,3rem);
+  background:rgba(6,16,30,.85);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--bdr);
+}
+.nav-logo{font-size:15px;font-weight:600;color:#fff;letter-spacing:-.01em}
+.nav-logo span{color:var(--blue)}
+.nav-links{display:flex;gap:4px;align-items:center}
+.nav-links a{
+  padding:6px 13px;border-radius:var(--r);font-size:13px;font-weight:500;
+  color:var(--text2);transition:.15s;
+}
+.nav-links a:hover,.nav-links a.active{color:#fff;background:rgba(255,255,255,.07)}
+.nav-chat{
+  padding:7px 14px;border-radius:var(--r);font-size:13px;font-weight:500;
+  background:var(--blue);color:#fff;display:flex;align-items:center;gap:6px;
+  transition:.15s;border:none;cursor:pointer;
+}
+.nav-chat:hover{opacity:.88}
+
+/* ── HERO ───────────────────────────────────── */
+#hero{
+  min-height:100vh;display:flex;flex-direction:column;
+  justify-content:center;padding:80px clamp(1.5rem,6vw,4rem) 3rem;
+  position:relative;overflow:hidden;
+}
+.hero-grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(74,140,247,.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(74,140,247,.04) 1px,transparent 1px);
+  background-size:48px 48px;
+  mask-image:radial-gradient(ellipse 80% 60% at 50% 40%,black 30%,transparent 100%);
+}
+.hero-glow{
+  position:absolute;top:-20%;left:-10%;
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(74,140,247,.08) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-inner{max-width:780px;position:relative;z-index:1}
+
+/* ── HERO PHOTO ───────────────────────── */
+.hero-layout{display:grid;grid-template-columns:1fr auto;align-items:center;gap:3rem;width:100%;position:relative;z-index:1}
+.hero-photo{width:220px;height:220px;border-radius:50%;object-fit:cover;border:3px solid var(--blue);box-shadow:0 0 40px rgba(74,140,247,.25),0 0 80px rgba(45,212,191,.1);flex-shrink:0;align-self:center}
+@media(max-width:768px){.hero-layout{grid-template-columns:1fr}.hero-photo{width:140px;height:140px;margin:0 auto;order:-1}}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:5px 13px;border-radius:99px;
+  border:1px solid rgba(74,140,247,.3);
+  background:rgba(74,140,247,.08);
+  font-size:12px;font-weight:500;color:var(--blue);
+  margin-bottom:1.5rem;
+}
+.badge-dot{width:7px;height:7px;border-radius:50%;background:var(--teal);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+.hero-name{
+  font-size:clamp(2.5rem,6vw,4rem);font-weight:700;color:#fff;
+  letter-spacing:-.03em;line-height:1.1;margin-bottom:.6rem;
+}
+.hero-name .grad{
+  background:linear-gradient(135deg,var(--blue) 0%,var(--teal) 50%,var(--purple) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero-typing{
+  font-size:clamp(1rem,2.5vw,1.3rem);font-weight:400;
+  color:var(--text2);margin-bottom:.75rem;min-height:1.8em;
+}
+.hero-typing .cursor{display:inline-block;width:2px;height:1em;background:var(--blue);margin-left:2px;animation:blink .7s infinite;vertical-align:text-bottom}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.hero-sub{
+  font-size:15px;color:var(--text2);max-width:600px;
+  line-height:1.7;margin-bottom:2rem;
+}
+.hero-sub strong{color:var(--text);font-weight:500}
+.hero-stats{display:flex;gap:2rem;flex-wrap:wrap;margin-bottom:2rem}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-val{font-size:1.6rem;font-weight:700;color:#fff;letter-spacing:-.03em;line-height:1}
+.h-stat-lbl{font-size:12px;color:var(--text2);margin-top:3px}
+.hero-btns{display:flex;gap:10px;flex-wrap:wrap}
+.hero-btns .btn-break{flex-basis:100%;height:0}
+.btn-pri{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:10px 20px;border-radius:var(--r);font-size:14px;font-weight:500;
+  background:var(--blue);color:#fff;transition:.15s;border:none;cursor:pointer;
+}
+.btn-pri:hover{opacity:.85;transform:translateY(-1px)}
+.btn-sec{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:10px 20px;border-radius:var(--r);font-size:14px;font-weight:500;
+  background:transparent;color:var(--text);
+  border:1px solid var(--bdr2);transition:.15s;
+}
+.btn-sec:hover{background:var(--bg3);border-color:var(--bdr2);transform:translateY(-1px)}
+
+/* ── SECTION COMMON ─────────────────────────── */
+section{padding:5rem clamp(1.5rem,6vw,4rem)}
+.sec-label{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--blue);margin-bottom:.75rem;
+}
+.sec-title{font-size:clamp(1.5rem,3vw,2rem);font-weight:700;color:#fff;letter-spacing:-.02em;margin-bottom:.5rem}
+.sec-sub{font-size:15px;color:var(--text2);max-width:600px;margin-bottom:2.5rem;line-height:1.7}
+.fade-up{opacity:0;transform:translateY(24px);transition:opacity .5s,transform .5s}
+.fade-up.visible{opacity:1;transform:none}
+
+/* ── ABOUT ───────────────────────────────────── */
+#about{background:var(--bg2)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+.about-text{font-size:15px;color:var(--text2);line-height:1.8}
+.about-text p+p{margin-top:.875rem}
+.about-text strong{color:var(--text);font-weight:500}
+.focus-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.5rem}
+.pill{
+  display:inline-flex;align-items:center;gap:5px;
+  padding:5px 12px;border-radius:99px;font-size:12px;font-weight:500;
+  border:1px solid;
+}
+.pill-blue{border-color:rgba(74,140,247,.35);background:var(--blue-d);color:var(--blue)}
+.pill-teal{border-color:rgba(45,212,191,.35);background:var(--teal-d);color:var(--teal)}
+.pill-amber{border-color:rgba(245,166,35,.35);background:var(--amber-d);color:var(--amber)}
+.pill-rose{border-color:rgba(244,99,122,.35);background:var(--rose-d);color:var(--rose)}
+.pill-purple{border-color:rgba(167,139,250,.35);background:var(--purple-d);color:var(--purple)}
+.about-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.a-card{
+  background:var(--bg3);border:1px solid var(--bdr);border-radius:var(--r2);
+  padding:1.125rem;
+}
+.a-card-icon{font-size:22px;margin-bottom:.5rem}
+.a-card-val{font-size:1.5rem;font-weight:700;color:#fff;line-height:1}
+.a-card-lbl{font-size:12px;color:var(--text2);margin-top:3px}
+
+/* ── EXPERIENCE ──────────────────────────────── */
+.timeline{display:flex;flex-direction:column;gap:0}
+.tl-item{display:grid;grid-template-columns:20px 1fr;gap:0 1.25rem;position:relative}
+.tl-gutter{display:flex;flex-direction:column;align-items:center;padding-top:5px}
+.tl-dot{
+  width:12px;height:12px;border-radius:50%;flex-shrink:0;
+  border:2px solid var(--bg);
+}
+.tl-dot.active{background:var(--teal);box-shadow:0 0 10px var(--teal)}
+.tl-dot.past{background:var(--text3)}
+.tl-line{flex:1;width:1px;background:var(--bdr);margin:4px 0}
+.tl-card{
+  background:var(--bg3);border:1px solid var(--bdr);border-radius:var(--r2);
+  padding:1.25rem 1.375rem;margin-bottom:16px;transition:.2s;
+}
+.tl-card:hover{border-color:var(--bdr2);background:var(--bg4)}
+.tl-header{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap}
+.tl-company{font-size:15px;font-weight:600;color:#fff}
+.tl-role{font-size:13px;color:var(--blue);margin-top:2px}
+.tl-period{font-size:12px;color:var(--text3);white-space:nowrap;padding-top:3px}
+.tl-metrics{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.metric-badge{
+  display:inline-flex;align-items:center;gap:4px;
+  padding:3px 9px;border-radius:99px;font-size:11px;font-weight:500;
+  background:var(--blue-d);color:var(--blue);border:1px solid rgba(74,140,247,.25);
+}
+.metric-badge.g{background:var(--teal-d);color:var(--teal);border-color:rgba(45,212,191,.25)}
+.metric-badge.a{background:var(--amber-d);color:var(--amber);border-color:rgba(245,166,35,.25)}
+.toggle-btn{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:12px;color:var(--text2);margin-top:10px;padding:4px 0;
+  transition:.15s;background:none;border:none;cursor:pointer;
+}
+.toggle-btn:hover{color:var(--blue)}
+.toggle-btn .ti{transition:.3s}
+.toggle-btn.open .ti{transform:rotate(180deg)}
+.tl-details{display:none;margin-top:12px;padding-top:12px;border-top:1px solid var(--bdr)}
+.tl-details.open{display:block}
+.tl-bullets{list-style:none;display:flex;flex-direction:column;gap:6px}
+.tl-bullets li{
+  display:block;padding-left:1.25rem;position:relative;
+  font-size:13px;color:var(--text2);line-height:1.6;
+}
+.tl-bullets li::before{content:"→";color:var(--blue);position:absolute;left:0;top:0}
+.tl-bullets li strong{display:inline;color:var(--text);font-weight:500}
+
+/* ── PROJECTS ────────────────────────────────── */
+#projects{background:var(--bg2)}
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.proj-card{
+  background:var(--bg3);border:1px solid var(--bdr);border-radius:var(--r2);
+  padding:1.375rem;display:flex;flex-direction:column;gap:.75rem;
+  transition:.25s;position:relative;overflow:hidden;
+}
+.proj-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  opacity:0;transition:.25s;
+}
+.proj-card.blue::before{background:linear-gradient(90deg,var(--blue),var(--teal))}
+.proj-card.teal::before{background:linear-gradient(90deg,var(--teal),var(--purple))}
+.proj-card.amber::before{background:linear-gradient(90deg,var(--amber),var(--rose))}
+.proj-card.rose::before{background:linear-gradient(90deg,var(--rose),var(--purple))}
+.proj-card.purple::before{background:linear-gradient(90deg,var(--purple),var(--blue))}
+.proj-card:hover{border-color:var(--bdr2);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.3)}
+.proj-card:hover::before{opacity:1}
+.proj-top{display:flex;justify-content:space-between;align-items:flex-start}
+.proj-icon{
+  width:40px;height:40px;border-radius:var(--r);border:1px solid var(--bdr);
+  display:flex;align-items:center;justify-content:center;font-size:20px;
+  background:var(--bg4);
+}
+.status-badge{
+  padding:3px 9px;border-radius:99px;font-size:11px;font-weight:500;
+}
+.status-live{background:var(--teal-d);color:var(--teal);border:1px solid rgba(45,212,191,.3)}
+.status-pypi{background:var(--amber-d);color:var(--amber);border:1px solid rgba(245,166,35,.3)}
+.status-stealth{background:var(--rose-d);color:var(--rose);border:1px solid rgba(244,99,122,.3)}
+.status-build{background:var(--purple-d);color:var(--purple);border:1px solid rgba(167,139,250,.3)}
+.proj-name{font-size:15px;font-weight:600;color:#fff}
+.proj-desc{font-size:13px;color:var(--text2);line-height:1.65;flex:1}
+.proj-tags{display:flex;flex-wrap:wrap;gap:5px}
+.tag{padding:2px 8px;border-radius:5px;font-size:11px;background:var(--bg4);color:var(--text2);border:1px solid var(--bdr)}
+.proj-links{display:flex;gap:10px;flex-wrap:wrap;padding-top:.25rem;border-top:1px solid var(--bdr)}
+.plink{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:12px;color:var(--text2);transition:.15s;
+}
+.plink:hover{color:var(--blue)}
+
+/* ── BLOG ───────────────────────────────────── */
+#blog{background:var(--bg2)}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
+.blog-source{
+  background:
+    radial-gradient(circle at top right,rgba(74,140,247,.14),transparent 55%),
+    radial-gradient(circle at bottom left,rgba(45,212,191,.12),transparent 55%),
+    var(--bg3);
+  border:1px solid var(--bdr);border-radius:var(--r2);
+  padding:1.25rem;display:flex;flex-direction:column;gap:.875rem;
+  box-shadow:0 12px 40px rgba(0,0,0,.25);
+}
+.blog-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.blog-name{font-size:15px;font-weight:600;color:#fff;display:flex;align-items:center;gap:8px}
+.blog-open{
+  font-size:12px;color:var(--text2);display:inline-flex;align-items:center;gap:4px;
+  padding:4px 9px;border-radius:6px;background:var(--bg4);border:1px solid var(--bdr);transition:.15s;
+}
+.blog-open:hover{color:var(--blue);border-color:var(--bdr2)}
+.blog-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.blog-item{
+  border:1px solid var(--bdr);background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.01)),var(--bg4);
+  border-radius:12px;padding:.75rem .875rem;transition:.2s;
+}
+.blog-item:hover{border-color:var(--bdr2);transform:translateY(-1px)}
+.blog-item a{font-size:13px;font-weight:600;color:#fff;line-height:1.45}
+.blog-item a:hover{color:var(--blue)}
+.blog-meta{font-size:11px;color:var(--text3);margin-top:4px}
+.blog-empty{font-size:13px;color:var(--text2)}
+.blog-controls{display:flex;justify-content:space-between;align-items:center;gap:10px;padding-top:2px}
+.blog-more{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:12px;font-weight:500;padding:5px 10px;border-radius:8px;
+  border:1px solid var(--bdr);background:var(--bg4);color:var(--text2);transition:.15s;
+}
+.blog-more:hover{border-color:var(--bdr2);color:#fff}
+.blog-more[hidden]{display:none}
+.blog-overflow{font-size:12px;color:var(--text3)}
+
+/* ── SKILLS ──────────────────────────────────── */
+.skills-grid{display:flex;flex-direction:column;gap:1.25rem}
+.skill-cat-block{
+  background:var(--bg3);border:1px solid var(--bdr);border-radius:var(--r2);
+  padding:1.125rem 1.25rem;
+}
+.skill-cat-header{display:flex;align-items:center;gap:8px;margin-bottom:.875rem}
+.skill-cat-icon{
+  width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;
+  font-size:16px;flex-shrink:0;
+}
+.skill-cat-name{font-size:14px;font-weight:600;color:#fff}
+.skill-tags{display:flex;flex-wrap:wrap;gap:6px}
+.stag{
+  padding:4px 10px;border-radius:6px;font-size:12px;font-weight:500;
+  background:var(--bg4);color:var(--text2);border:1px solid var(--bdr);
+  transition:.15s;
+}
+.stag:hover{border-color:var(--bdr2);color:var(--text)}
+.stag.hi{color:var(--blue);border-color:rgba(74,140,247,.25);background:var(--blue-d)}
+
+/* ── BEYOND ──────────────────────────────────── */
+#beyond{background:var(--bg2)}
+.beyond-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.beyond-card{
+  background:var(--bg3);border:1px solid var(--bdr);border-radius:var(--r2);
+  padding:1.375rem;transition:.2s;
+}
+.beyond-card:hover{border-color:var(--bdr2);transform:translateY(-2px)}
+.beyond-icon{
+  width:44px;height:44px;border-radius:var(--r);border:1px solid var(--bdr);
+  display:flex;align-items:center;justify-content:center;font-size:22px;
+  margin-bottom:1rem;
+}
+.beyond-title{font-size:14px;font-weight:600;color:#fff;margin-bottom:.375rem}
+.beyond-desc{font-size:13px;color:var(--text2);line-height:1.65;margin-bottom:.875rem}
+.beyond-links{display:flex;flex-wrap:wrap;gap:8px}
+.blink{
+  display:inline-flex;align-items:center;gap:4px;
+  font-size:12px;padding:4px 10px;border-radius:6px;
+  background:var(--bg4);border:1px solid var(--bdr);color:var(--text2);
+  transition:.15s;
+}
+.blink:hover{border-color:var(--bdr2);color:var(--blue)}
+.platform-badges{display:flex;flex-wrap:wrap;gap:5px;margin-top:.75rem}
+.pbadge{
+  padding:2px 8px;border-radius:5px;font-size:11px;
+  background:var(--bg4);color:var(--text2);border:1px solid var(--bdr);
+}
+
+/* ── CERTS ───────────────────────────────────── */
+.certs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.cert-card{
+  background:var(--bg3);border:1px solid var(--bdr);border-radius:var(--r2);
+  padding:1rem 1.125rem;display:flex;align-items:flex-start;gap:.875rem;
+  transition:.2s;
+}
+.cert-card:hover{border-color:var(--bdr2)}
+.cert-dot{width:8px;height:8px;border-radius:50%;background:var(--blue);margin-top:5px;flex-shrink:0}
+.cert-name{font-size:13px;font-weight:500;color:var(--text)}
+.cert-issuer{font-size:11px;color:var(--text2);margin-top:2px}
+.cert-date{font-size:11px;color:var(--text3);margin-top:2px}
+
+/* ── CONTACT ─────────────────────────────────── */
+#contact{text-align:center;padding:5rem clamp(1.5rem,6vw,4rem)}
+.contact-links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:2rem}
+.contact-link{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:10px 20px;border-radius:var(--r);font-size:14px;font-weight:500;
+  border:1px solid var(--bdr);background:var(--bg3);color:var(--text2);
+  transition:.15s;
+}
+.contact-link:hover{border-color:var(--bdr2);color:#fff;transform:translateY(-2px)}
+footer{padding:2rem;text-align:center;font-size:12px;color:var(--text3);border-top:1px solid var(--bdr)}
+
+/* ── CHAT WIDGET ─────────────────────────────── */
+.chat-btn{
+  position:fixed;bottom:24px;right:24px;z-index:300;
+  width:52px;height:52px;border-radius:50%;
+  background:linear-gradient(135deg,var(--blue),var(--teal));
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 24px rgba(74,140,247,.4);
+  cursor:pointer;border:none;font-size:22px;color:#fff;transition:.2s;
+}
+.chat-btn:hover{transform:scale(1.08);box-shadow:0 6px 32px rgba(74,140,247,.5)}
+.chat-panel{
+  position:fixed;bottom:86px;right:24px;z-index:300;
+  width:360px;max-width:calc(100vw - 48px);
+  background:var(--bg3);border:1px solid var(--bdr2);border-radius:var(--r3);
+  box-shadow:0 24px 80px rgba(0,0,0,.6);
+  display:none;flex-direction:column;overflow:hidden;
+  max-height:520px;
+}
+.chat-panel.open{display:flex}
+.chat-ph{
+  padding:1rem 1.125rem;border-bottom:1px solid var(--bdr);
+  display:flex;align-items:center;justify-content:space-between;
+}
+.chat-ph-info{display:flex;align-items:center;gap:10px}
+.chat-avatar{
+  width:34px;height:34px;border-radius:50%;
+  background:linear-gradient(135deg,var(--blue),var(--teal));
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:700;color:#fff;
+}
+.chat-ph-name{font-size:13px;font-weight:600;color:#fff}
+.chat-ph-status{font-size:11px;color:var(--teal);display:flex;align-items:center;gap:4px}
+.chat-ph-status::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--teal)}
+.chat-close{font-size:18px;color:var(--text2);padding:4px;transition:.15s;cursor:pointer}
+.chat-close:hover{color:#fff}
+.chat-msgs{
+  flex:1;overflow-y:auto;padding:.875rem;display:flex;flex-direction:column;gap:10px;
+  min-height:200px;
+}
+.cmsg{max-width:85%;font-size:13px;padding:.625rem .875rem;border-radius:12px;line-height:1.55}
+.cmsg.bot{background:var(--bg4);color:var(--text);align-self:flex-start;border-bottom-left-radius:3px}
+.cmsg.user{background:var(--blue);color:#fff;align-self:flex-end;border-bottom-right-radius:3px}
+.cmsg.typing{color:var(--text2)}
+.chat-chips{display:flex;flex-direction:column;gap:5px;padding:.5rem .875rem;border-top:1px solid var(--bdr)}
+.cchip{
+  text-align:left;padding:5px 10px;border-radius:8px;font-size:12px;
+  border:1px solid var(--bdr);color:var(--text2);background:transparent;
+  cursor:pointer;transition:.15s;
+}
+.cchip:hover{border-color:var(--bdr2);color:var(--text);background:var(--bg4)}
+.chat-input-wrap{display:flex;gap:8px;padding:.75rem .875rem;border-top:1px solid var(--bdr)}
+.chat-input-wrap input{
+  flex:1;background:var(--bg4);border:1px solid var(--bdr);border-radius:8px;
+  padding:7px 12px;font-size:13px;color:var(--text);font-family:inherit;outline:none;
+  transition:.15s;
+}
+.chat-input-wrap input:focus{border-color:var(--blue)}
+.chat-send{
+  width:34px;height:34px;border-radius:8px;background:var(--blue);
+  display:flex;align-items:center;justify-content:center;font-size:16px;color:#fff;
+  cursor:pointer;border:none;flex-shrink:0;transition:.15s;
+}
+.chat-send:hover{opacity:.85}
+
+@media(max-width:768px){
+  .about-grid{grid-template-columns:1fr}
+  .about-cards{order:-1}
+  .nav-links{display:none}
+  .hero-stats{gap:1.25rem}
+}
+  /* ── PHOTO WIDGET ─────────────────────────────── */
+.photo-widget{
+  position:fixed;bottom:86px;right:24px;z-index:290;
+  width:64px;height:64px;border-radius:50%;
+  border:2px solid var(--blue);
+  box-shadow:0 4px 20px rgba(74,140,247,.35);
+  overflow:hidden;cursor:pointer;
+  transition:.2s;
+  background:var(--bg3);
+}
+.photo-widget img{width:100%;height:100%;object-fit:cover;display:block}
+.photo-widget:hover{transform:scale(1.07);box-shadow:0 6px 28px rgba(74,140,247,.5)}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────── -->
+<nav id="main-nav">
+  <div class="nav-logo">HG<span>.</span></div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#blog">Blog</a>
+    <a href="#skills">Skills</a>
+    <a href="#beyond">Beyond</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <button class="nav-chat" onclick="toggleChat()">
+    <i class="ti ti-message-circle"></i> Chat with Hardik
+  </button>
+</nav>
+
+<!-- ── HERO ─────────────────────────────── -->
+<section id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-layout">
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      Available for AI/Data architecture/Leadership roles · Bangalore, India
+    </div>
+    <h1 class="hero-name"><span class="grad">Hardik Goel</span></h1>
+    <div class="hero-typing">
+      <span id="typing-text"></span><span class="cursor"></span>
+    </div>
+    <p class="hero-sub">
+      Bridging <strong>enterprise-scale data platforms</strong> and <strong>production-grade GenAI systems</strong> — 
+      from MLOps governance to agentic AI orchestration. 
+      Open-source contributor, published author, and AI educator with a decade plus of community work alongside corporate career.
+    </p>
+    <div class="hero-stats">
+      <div class="h-stat"><span class="h-stat-val">13+</span><span class="h-stat-lbl">Years experience</span></div>
+      <div class="h-stat"><span class="h-stat-val">£3.5B</span><span class="h-stat-lbl">Platform ownership</span></div>
+      <div class="h-stat"><span class="h-stat-val">Decade+</span><span class="h-stat-lbl">Years as AI educator</span></div>
+      <div class="h-stat"><span class="h-stat-val">2</span><span class="h-stat-lbl">OSS AI tools shipped</span></div>
+    </div>
+    <div class="hero-btns">
+      <a class="btn-pri" href="#projects"><i class="ti ti-bolt"></i> View Projects</a>
+      <a class="btn-sec" href="https://github.com/hardik-goel" target="_blank"><i class="ti ti-brand-github"></i> GitHub</a>
+      <a class="btn-sec" href="https://www.linkedin.com/in/hardik-goel-a6334936/" target="_blank"><i class="ti ti-brand-linkedin"></i> LinkedIn</a>
+      <a class="btn-sec" href="https://drive.google.com/file/d/1tqsDCa-PQwYbICBiGp-9mY5zdpIj2yFs/view?usp=sharing" target="_blank"><i class="ti ti-download"></i> Resume</a>
+      <span class="btn-break" aria-hidden="true"></span>
+      <a class="btn-sec" href="https://goelh.substack.com/" target="_blank"><i class="ti ti-article"></i> Substack</a>
+      <a class="btn-sec" href="https://medium.com/@hardik.goel214" target="_blank"><i class="ti ti-brand-medium"></i> Medium</a>
+      <a class="btn-sec" href="https://topmate.io/hardik_goel11/268148" target="_blank"><i class="ti ti-user-star"></i> Topmate</a>
+    </div>
+</div>
+  <img class="hero-photo"
+       src="https://raw.githubusercontent.com/hardik-goel/hardik-portfolio/master/resources/hardik.jpg"
+       alt="Hardik Goel"
+       onerror="this.style.display='none'">
+  </div>
+</section>
+
+<!-- ── ABOUT ─────────────────────────────── -->
+<section id="about">
+  <div class="sec-label fade-up"><i class="ti ti-user-circle"></i> About</div>
+  <h2 class="sec-title fade-up">The Enterprise ↔ GenAI Bridge</h2>
+  <div class="about-grid fade-up">
+    <div>
+      <div class="about-text">
+        <p>Most engineers are either <strong>enterprise-only</strong> or <strong>GenAI-only</strong>. I sit at the intersection — 13+ years owning scalable data platforms, MLOps governance frameworks, and production pipelines, while simultaneously building agentic AI systems, intelligent orchestration frameworks, and LLM-powered engineering workflows.</p>
+        <p>At Tesco, I architect a £3.5B commodity AI platform and pioneered a persona-based agentic engineering framework — one of the earliest enterprise implementations of role-based AI agents in production data engineering. At Paytm, I led a 14-member team and drove transformative metrics: payment SLA from 15 days → 3 days, attrition cut by 40%.</p>
+        <p>Parallel to my corporate career, I've been an <strong>AI educator for 10+ years</strong>, a published author, open-source contributor, and content creator — building community while building systems.</p>
+      </div>
+      <div class="focus-pills" style="margin-top:1.5rem">
+        <span class="pill pill-blue"><i class="ti ti-brain"></i> Agentic AI Systems</span>
+        <span class="pill pill-teal"><i class="ti ti-server"></i> MLOps Governance</span>
+        <span class="pill pill-amber"><i class="ti ti-code"></i> AI-Augmented Engineering</span>
+        <span class="pill pill-purple"><i class="ti ti-route"></i> Intelligent Orchestration</span>
+        <span class="pill pill-rose"><i class="ti ti-building"></i> Platform Strategy</span>
+      </div>
+    </div>
+    <div class="about-cards">
+      <div class="a-card">
+        <div class="a-card-icon">🏗️</div>
+        <div class="a-card-val">£3.5B</div>
+        <div class="a-card-lbl">Procurement platform at Tesco</div>
+      </div>
+      <div class="a-card">
+        <div class="a-card-icon">⚡</div>
+        <div class="a-card-val">15→3d</div>
+        <div class="a-card-lbl">Payment SLA reduction at Paytm</div>
+      </div>
+      <div class="a-card">
+        <div class="a-card-icon">🎓</div>
+        <div class="a-card-val">10 +</div>
+        <div class="a-card-lbl">Years as AI educator across 8 platforms</div>
+      </div>
+      <div class="a-card">
+        <div class="a-card-icon">📦</div>
+        <div class="a-card-val">PyPI </div>
+        <div class="a-card-lbl">Published open-source AI library</div>
+      </div>
+      <div class="a-card">
+        <div class="a-card-icon">📖</div>
+        <div class="a-card-val">Author</div>
+        <div class="a-card-lbl">"Forgotten By Design" — published 2025</div>
+      </div>
+      <div class="a-card">
+        <div class="a-card-icon">👥</div>
+        <div class="a-card-val">14×</div>
+        <div class="a-card-lbl">Engineering team led at Paytm</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EXPERIENCE ─────────────────────────── -->
+<section id="experience">
+  <div class="sec-label fade-up"><i class="ti ti-briefcase"></i> Experience</div>
+  <h2 class="sec-title fade-up">Career Timeline</h2>
+  <p class="sec-sub fade-up">Click any role to expand full details.</p>
+  <div class="timeline fade-up">
+
+    <!-- TESCO -->
+    <div class="tl-item">
+      <div class="tl-gutter"><div class="tl-dot active"></div><div class="tl-line"></div></div>
+      <div class="tl-card">
+        <div class="tl-header">
+          <div>
+            <div class="tl-company">🛒 Tesco · Bangalore</div>
+            <div class="tl-role">Technical Architect — SDE3</div>
+          </div>
+          <div class="tl-period">Jan 2025 – Present</div>
+        </div>
+        <div class="tl-metrics">
+          <span class="metric-badge g"><i class="ti ti-currency-pound"></i> £3.5B platform</span>
+          <span class="metric-badge">MLOps governance</span>
+          <span class="metric-badge">Agentic AI framework</span>
+          <span class="metric-badge a">Azure ML · MLflow · SHAP</span>
+        </div>
+        <button class="toggle-btn" onclick="toggleDetails(this)">
+          <i class="ti ti-chevron-down"></i> See full details
+        </button>
+        <div class="tl-details">
+          <ul class="tl-bullets">
+            <p><strong>End-to-end architecture ownership</strong> of an AI-driven commodity forecasting platform supporting a <strong>£3.5B procurement domain</strong>, spanning MLOps governance, platform engineering, and AI-augmented engineering enablement.</p>
+
+<h4>Platform Architecture &amp; MLOps Governance</h4>
+
+
+<ul>
+  <li>Architected and delivered a production-grade AI commodity forecasting platform supporting <strong>£3.5B in annual procurement</strong> across multiple commodities and prediction horizons.</li>
+
+  <li>Designed scalable MLOps workflows on Azure ML using <strong>MLflow, SHAP, and PSI drift monitoring</strong>; established end-to-end governed deployment pipelines with DQ gates, model metadata registries, security scanning, audit logs, Microsoft Purview lineage, and Maker-Checker controls.</li>
+
+  <li>Defined and enforced engineering governance standards across Data Engineering and ML — modular architecture, typed interfaces, reusable pipeline templates, and automated pytest coverage gates — improving deployment consistency and platform reliability.</li>
+
+  <li>Built reusable metadata-driven data and ML pipelines integrating <strong>LSEG and enterprise RDBMS sources</strong>, reducing commodity onboarding effort and improving scalability across new forecasting use cases.</li>
+
+  <li>Revamped fragmented forecasting workflows into a scalable, production-ready architecture optimised for reliability, maintainability, auditability, and developer velocity.</li>
+
+  <li>Delivered stakeholder analytics dashboards and data enrichment solutions, improving commercial visibility into commodity trends and model outputs.</li>
+</ul>
+
+<h4>AI-Augmented Engineering &amp; Agentic Framework Design</h4>
+
+<ul>
+  <li>Pioneered AI-augmented engineering workflows using <strong>Claude and GPT agents</strong> for automated code review, test generation, documentation, and pipeline scaffolding — significantly accelerating delivery velocity.</li>
+
+  <li>Designed a <strong>persona-based agentic framework</strong> with specialised AI roles for Data Engineering, ML Review, Security, and MLOps Governance — one of the earliest enterprise implementations of role-based AI agents in a production data platform.</li>
+
+  <li>Authored AI-enforceable markdown standards enabling automated enforcement of coding practices, security guardrails, and quality gates through structured context orchestration and RAG workflows.</li>
+
+  <li>Contributed architecture consulting and platform engineering across enterprise PoCs and production adoption initiatives, accelerating AI adoption across cross-functional teams.</li>
+</ul>
+</ul>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAYTM -->
+    <div class="tl-item">
+      <div class="tl-gutter"><div class="tl-dot past"></div><div class="tl-line"></div></div>
+      <div class="tl-card">
+        <div class="tl-header">
+          <div>
+            <div class="tl-company">💳 Paytm · Bangalore & Noida</div>
+            <div class="tl-role">Data Engineering Manager</div>
+          </div>
+          <div class="tl-period">Jan 2022 – Jan 2025</div>
+        </div>
+        <div class="tl-metrics">
+          <span class="metric-badge g">SLA 15d → 3d</span>
+          <span class="metric-badge g">Attrition ↓ 40%</span>
+          <span class="metric-badge">Cost ↓ 50%+</span>
+          <span class="metric-badge a">14-member team</span>
+          <span class="metric-badge">Dream11 scale (1.8B events/day)</span>
+        </div>
+        <button class="toggle-btn" onclick="toggleDetails(this)">
+          <i class="ti ti-chevron-down"></i> See full details
+        </button>
+        <div class="tl-details">
+          <ul class="tl-bullets">
+            <li>Led <strong>14-member engineering team</strong> across incentive management, merchant analytics, and GenAI product initiatives.</li>
+            <li><strong>Incentive platform</strong>: payment SLA 15 → 3 days, accuracy &gt;97%, attrition ↓ 40% — using Airflow, AWS EMR, PySpark, MongoDB, DBT.</li>
+            <li>Drove &gt;50% cost reduction on Incentives; <strong>&gt;70% cost cut on PGOLAP DBR</strong> at 110M daily events (Dream11 scale — 1.8B daily events).</li>
+            <li><strong>Merchant analytics</strong>: &gt;40% offline merchant sales growth, &gt;30% cross-sell rate uplift — Kafka + NiFi + Spark + Apache Hudi + ElasticSearch.</li>
+            <li>Built <strong>FSEBuddy</strong> — self-service platform enabling Product team autonomy, reducing engineering dependency.</li>
+            <li>Delivered <strong>CustomerEchoEase</strong> — GenAI-powered customer insights solution as an internal innovation initiative.</li>
+            <li>Implemented observability frameworks, Maker-Checker processes, and process-level governance controls across the platform.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- IMPETUS -->
+    <div class="tl-item">
+      <div class="tl-gutter"><div class="tl-dot past"></div><div class="tl-line"></div></div>
+      <div class="tl-card">
+        <div class="tl-header">
+          <div>
+            <div class="tl-company">✈️ Impetus Technologies · Gurgaon</div>
+            <div class="tl-role">Senior Software Engineer</div>
+          </div>
+          <div class="tl-period">Feb 2020 – Jan 2022</div>
+        </div>
+        <div class="tl-metrics">
+          <span class="metric-badge g">Ingestion TAT ↓ 40%</span>
+          <span class="metric-badge g">Error rates ↓ 90%</span>
+          <span class="metric-badge g">Latency 2s → 20ms</span>
+        </div>
+        <button class="toggle-btn" onclick="toggleDetails(this)">
+          <i class="ti ti-chevron-down"></i> See full details
+        </button>
+        <div class="tl-details">
+          <ul class="tl-bullets">
+            <li><strong>ICON framework</strong> (US airline): data lake governance — ingestion TAT ↓ 40%, error rates ↓ 90% — AWS Lambda, Glue, Athena, RDS, PySpark.</li>
+            <li><strong>Search engine optimisation</strong> (intelligence client): latency ↓ 99% (2s → 20ms) using Solr + ELK; Cassandra for cold-path storage; Kafka as data backbone.</li>
+            <li><strong>Semiconductor sensor analytics</strong>: real-time anomaly detection — Kafka + Flink + QuickSight + Redshift Spectrum + DBT + MWAA + Apache Beam.</li>
+            <li>Built internal NLP sentiment analyser using NLTK, outperforming VADER accuracy benchmarks.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- COGNIZANT -->
+    <div class="tl-item">
+      <div class="tl-gutter"><div class="tl-dot past"></div><div class="tl-line"></div></div>
+      <div class="tl-card">
+        <div class="tl-header">
+          <div>
+            <div class="tl-company">🏦 Cognizant · Gurgaon</div>
+            <div class="tl-role">Associate — Big Data Engineer</div>
+          </div>
+          <div class="tl-period">Apr 2018 – Jan 2020</div>
+        </div>
+        <div class="tl-metrics">
+          <span class="metric-badge">AML false positives ↓ from 91%</span>
+          <span class="metric-badge a">European bank</span>
+        </div>
+        <button class="toggle-btn" onclick="toggleDetails(this)">
+          <i class="ti ti-chevron-down"></i> See full details
+        </button>
+        <div class="tl-details">
+          <ul class="tl-bullets">
+            <li>AML false positive reduction from 91% — LightGBM (Paylay model) + Spark + Hive/Impala pipeline; Oracle/Teradata sources via Sqoop.</li>
+            <li>Mainframe CDC pipeline: Kafka + PySpark + MongoDB as Operational Data Store (ODS) for European bank.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACCENTURE -->
+    <div class="tl-item">
+      <div class="tl-gutter"><div class="tl-dot past"></div></div>
+      <div class="tl-card">
+        <div class="tl-header">
+          <div>
+            <div class="tl-company">📡 Accenture · Pune & Gurgaon</div>
+            <div class="tl-role">Software Engineering Analyst</div>
+          </div>
+          <div class="tl-period">Oct 2014 – Apr 2018</div>
+        </div>
+        <div class="tl-metrics">
+          <span class="metric-badge">US/UK telecom clients</span>
+          <span class="metric-badge a">Kafka · Spark · Hive · Selenium · Appium</span>
+        </div>
+        <button class="toggle-btn" onclick="toggleDetails(this)">
+          <i class="ti ti-chevron-down"></i> See full details
+        </button>
+        <div class="tl-details">
+          <ul class="tl-bullets">
+            <li>CDR/UDR ingestion pipelines for US telecom (postpaid) — Kafka → Spark → Hive data stack.</li>
+            <li>MVNO mobile automation frameworks — Selenium WebDriver, Appium, TestNG, Jenkins (UK telecom).</li>
+            <li>Led cross-functional sprint and UAT testing programs — Agile/Scrum across US prepaid client teams.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── PROJECTS ─────────────────────────── -->
+<section id="projects">
+  <div class="sec-label fade-up"><i class="ti ti-code"></i> Open Source & Projects</div>
+  <h2 class="sec-title fade-up">What I Build</h2>
+  <p class="sec-sub fade-up">Production AI tooling, open-source frameworks, and stealth initiatives.</p>
+  <div class="proj-grid fade-up">
+
+    <div class="proj-card blue">
+      <div class="proj-top">
+        <div class="proj-icon">🔀</div>
+        <span class="status-badge status-live">Open Source</span>
+      </div>
+      <div class="proj-name">Switchboard</div>
+      <div class="proj-desc">Provider-agnostic AI model routing and orchestration framework. Dynamic fallback chains, cost-optimised routing, latency-aware model selection across OpenAI, Anthropic, and Google — designed for enterprise AI platform integration.</div>
+      <div class="proj-tags"><span class="tag">Python</span><span class="tag">LLM Routing</span><span class="tag">Orchestration</span><span class="tag">OpenAI</span><span class="tag">Anthropic</span></div>
+      <div class="proj-links">
+        <a href="https://github.com/hardik-goel/Switchboard" class="plink" target="_blank"><i class="ti ti-brand-github"></i> GitHub</a>
+      </div>
+    </div>
+
+    <div class="proj-card teal">
+      <div class="proj-top">
+        <div class="proj-icon">🎙️</div>
+        <span class="status-badge status-pypi">PyPI Published</span>
+      </div>
+      <div class="proj-name">AudioSummariser</div>
+      <div class="proj-desc">GenAI audio intelligence pipeline: transcription → embedding → chunking → summarisation → conversational RAG retrieval. Published as a PyPI package — production-ready for enterprise audio intelligence use cases.</div>
+      <div class="proj-tags"><span class="tag">RAG</span><span class="tag">Embeddings</span><span class="tag">Vector DB</span><span class="tag">PyPI</span><span class="tag">Whisper</span></div>
+      <div class="proj-links">
+        <a href="https://github.com/hardik-goel/Audio-Summariser" class="plink" target="_blank"><i class="ti ti-brand-github"></i> GitHub</a>
+        <a href="https://pypi.org/project/audiosummariser/" class="plink" target="_blank"><i class="ti ti-package"></i> PyPI</a>
+      </div>
+    </div>
+
+    <div class="proj-card amber">
+      <div class="proj-top">
+        <div class="proj-icon">🌾</div>
+        <span class="status-badge status-live">AI Product</span>
+      </div>
+      <div class="proj-name">CommodityBuddy</div>
+      <div class="proj-desc">GenAI assistant for commodity forecasting and procurement intelligence. Natural language querying over enterprise forecasting outputs — structured data → embeddings → RAG → conversational interface for non-technical stakeholders.</div>
+      <div class="proj-tags"><span class="tag">GenAI</span><span class="tag">RAG</span><span class="tag">Procurement AI</span><span class="tag">LLM</span></div>
+      <div class="proj-links"></div>
+    </div>
+
+    <div class="proj-card purple">
+      <div class="proj-top">
+        <div class="proj-icon">🤖</div>
+        <span class="status-badge status-build">Active Build</span>
+      </div>
+      <div class="proj-name">Agentic AI SaaS</div>
+      <div class="proj-desc">Founder-led SaaS applying multi-agent orchestration to enterprise workflow automation. Specialised AI personas, MCP-based integrations, and autonomous enterprise execution. Hands-on with image-gen LLMs, voiceovers, and multimodal agents.</div>
+      <div class="proj-tags"><span class="tag">Agentic AI</span><span class="tag">MCP</span><span class="tag">Multimodal</span><span class="tag">SaaS</span></div>
+      <div class="proj-links"></div>
+    </div>
+
+    <div class="proj-card rose">
+      <div class="proj-top">
+        <div class="proj-icon">🔒</div>
+        <span class="status-badge status-stealth">Stealth</span>
+      </div>
+      <div class="proj-name">Enterprise AI Governance Platform</div>
+      <div class="proj-desc">Autonomous compliance monitoring, alerting, and remediation for enterprise AI adoption in regulated industries. Agentic governance frameworks for finance, retail, and healthcare — built with RAG, Vector DBs, and LLMs.</div>
+      <div class="proj-tags"><span class="tag">Governance</span><span class="tag">Compliance</span><span class="tag">Agentic</span><span class="tag">RAG</span></div>
+      <div class="proj-links"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── BLOG ─────────────────────────────── -->
+<section id="blog">
+  <div class="sec-label fade-up"><i class="ti ti-article"></i> Blog</div>
+  <h2 class="sec-title fade-up">Latest Writing, Right Here</h2>
+  <p class="sec-sub fade-up">Recent Substack and Medium posts rendered directly on this page for a smoother reading path. Front-page links to both platforms remain available.</p>
+  <div class="blog-grid fade-up">
+    <article class="blog-source" data-blog-source="substack">
+      <div class="blog-head">
+        <div class="blog-name"><i class="ti ti-article"></i> Substack</div>
+        <a class="blog-open" href="https://goelh.substack.com/" target="_blank" rel="noopener noreferrer">
+          Visit <i class="ti ti-external-link"></i>
+        </a>
+      </div>
+      <ul id="substack-posts" class="blog-list">
+        <li class="blog-empty">Loading latest posts...</li>
+      </ul>
+      <div class="blog-controls">
+        <button type="button" class="blog-more" data-blog-toggle="substack" hidden>
+          Show more <i class="ti ti-chevron-down"></i>
+        </button>
+        <span class="blog-overflow" id="substack-overflow"></span>
+      </div>
+    </article>
+
+    <article class="blog-source" data-blog-source="medium">
+      <div class="blog-head">
+        <div class="blog-name"><i class="ti ti-brand-medium"></i> Medium</div>
+        <a class="blog-open" href="https://medium.com/@hardik.goel214" target="_blank" rel="noopener noreferrer">
+          Visit <i class="ti ti-external-link"></i>
+        </a>
+      </div>
+      <ul id="medium-posts" class="blog-list">
+        <li class="blog-empty">Loading latest posts...</li>
+      </ul>
+      <div class="blog-controls">
+        <button type="button" class="blog-more" data-blog-toggle="medium" hidden>
+          Show more <i class="ti ti-chevron-down"></i>
+        </button>
+        <span class="blog-overflow" id="medium-overflow"></span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ── SKILLS ─────────────────────────────── -->
+<section id="skills">
+  <div class="sec-label fade-up"><i class="ti ti-stack"></i> Skills</div>
+  <h2 class="sec-title fade-up">Technical Stack</h2>
+  <div class="skills-grid fade-up">
+    <div class="skill-cat-block">
+      <div class="skill-cat-header">
+        <div class="skill-cat-icon" style="background:var(--blue-d)">🧠</div>
+        <div class="skill-cat-name">AI & GenAI</div>
+      </div>
+      <div class="skill-tags">
+        <span class="stag hi">Agentic AI</span><span class="stag hi">RAG</span><span class="stag hi">LLMs</span><span class="stag hi">MCP</span><span class="stag hi">Vector Databases</span><span class="stag hi">Embeddings</span><span class="stag">Multimodal Agents</span><span class="stag">Image-Gen LLMs</span><span class="stag">Voice AI</span><span class="stag">OpenAI / Claude / Gemini</span><span class="stag">ChromaDB / FAISS</span>
+      </div>
+    </div>
+    <div class="skill-cat-block">
+      <div class="skill-cat-header">
+        <div class="skill-cat-icon" style="background:var(--teal-d)">⚙️</div>
+        <div class="skill-cat-name">MLOps & Governance</div>
+      </div>
+      <div class="skill-tags">
+        <span class="stag hi">MLflow</span><span class="stag hi">SHAP</span><span class="stag hi">PSI Drift Monitoring</span><span class="stag hi">Azure ML</span><span class="stag">Model Registry</span><span class="stag">Feature Stores</span><span class="stag">DQ Gates</span><span class="stag">Purview Lineage</span><span class="stag">Champion-Challenger</span><span class="stag">Audit Frameworks</span>
+      </div>
+    </div>
+    <div class="skill-cat-block">
+      <div class="skill-cat-header">
+        <div class="skill-cat-icon" style="background:var(--amber-d)">🔧</div>
+        <div class="skill-cat-name">Data Engineering</div>
+      </div>
+      <div class="skill-tags">
+        <span class="stag hi">Apache Spark</span><span class="stag hi">Kafka</span><span class="stag hi">Airflow</span><span class="stag hi">DBT</span><span class="stag hi">Databricks</span><span class="stag">Apache Hudi</span><span class="stag">Flink</span><span class="stag">NiFi</span><span class="stag">Delta Lake</span><span class="stag">CDC</span><span class="stag">Data Mesh</span><span class="stag">Data Lakehouse</span><span class="stag">ElasticSearch / Solr</span>
+      </div>
+    </div>
+    <div class="skill-cat-block">
+      <div class="skill-cat-header">
+        <div class="skill-cat-icon" style="background:var(--purple-d)">☁️</div>
+        <div class="skill-cat-name">Cloud & Infra</div>
+      </div>
+      <div class="skill-tags">
+        <span class="stag hi">AWS EMR</span><span class="stag hi">Lambda</span><span class="stag hi">Glue</span><span class="stag hi">Athena</span><span class="stag hi">Redshift</span><span class="stag hi">S3</span><span class="stag">OpenSearch</span><span class="stag">ECS</span><span class="stag">Azure AZ-900</span><span class="stag">Docker</span><span class="stag">Kubernetes</span><span class="stag">CI/CD</span><span class="stag">MWAA</span>
+      </div>
+    </div>
+    <div class="skill-cat-block">
+      <div class="skill-cat-header">
+        <div class="skill-cat-icon" style="background:var(--rose-d)">💻</div>
+        <div class="skill-cat-name">Languages</div>
+      </div>
+      <div class="skill-tags">
+        <span class="stag hi">Python</span><span class="stag hi">PySpark</span><span class="stag hi">SQL</span><span class="stag">Java / SpringBoot</span><span class="stag">Scala</span><span class="stag">Pandas · NumPy · scikit-learn</span>
+      </div>
+    </div>
+    <div class="skill-cat-block">
+      <div class="skill-cat-header">
+        <div class="skill-cat-icon" style="background:var(--teal-d)">🏛️</div>
+        <div class="skill-cat-name">Architecture & Leadership</div>
+      </div>
+      <div class="skill-tags">
+        <span class="stag hi">Platform Strategy</span><span class="stag hi">Reference Architecture</span><span class="stag hi">HLD / LLD</span><span class="stag">Data Contracts</span><span class="stag">Schema Evolution</span><span class="stag">Governance Frameworks</span><span class="stag">Team Building</span><span class="stag">Stakeholder Management</span><span class="stag">Intrapreneurship</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── BEYOND ENGINEERING ─────────────────── -->
+<section id="beyond">
+  <div class="sec-label fade-up"><i class="ti ti-sparkles"></i> Beyond Engineering</div>
+  <h2 class="sec-title fade-up">Community, Content & Creation</h2>
+  <p class="sec-sub fade-up">Eight years of parallel work — educating, writing, speaking, and building community alongside the corporate career.</p>
+  <div class="beyond-grid fade-up">
+
+    <div class="beyond-card">
+      <div class="beyond-icon" style="background:var(--amber-d);border-color:rgba(245,166,35,.2)">📖</div>
+      <div class="beyond-title">Published Author</div>
+      <div class="beyond-desc"><em>Forgotten By Design — The Silent Epidemic of Digital Dementia</em> (CleverFox Publishing, 2025). Explores how digital dependency and system design erode human cognition. Available on Kindle and paperback globally.</div>
+      <div class="beyond-links">
+        <a href="https://tinyurl.com/HardikGoelPaperbackUS" class="blink" target="_blank"><i class="ti ti-brand-amazon"></i> Kindle / US</a>
+        <a href="https://www.amazon.in/Forgotten-Design-Epidemic-Digital-Dementia/dp/9367078056" class="blink" target="_blank"><i class="ti ti-brand-amazon"></i> India</a>
+      </div>
+    </div>
+
+    <div class="beyond-card">
+      <div class="beyond-icon" style="background:var(--blue-d);border-color:rgba(74,140,247,.2)">🎓</div>
+      <div class="beyond-title">AI / Data Educator — 10+ Years</div>
+      <div class="beyond-desc">Designed and delivered full-stack curricula in Data Engineering, Data Science, and Generative AI. Mentored professionals, built end-to-end courses, and conducted PAN-India workshops for enterprises transitioning into AI-driven organisations.</div>
+      <div class="platform-badges">
+        <span class="pbadge">UpGrad</span><span class="pbadge">Analytics Vidhya</span><span class="pbadge">Ducat</span><span class="pbadge">GUVI</span><span class="pbadge">DataCouch</span><span class="pbadge">IK</span><span class="pbadge">ToolsQA</span>
+      </div>
+    </div>
+
+    <div class="beyond-card">
+      <div class="beyond-icon" style="background:var(--rose-d);border-color:rgba(244,99,122,.2)">🎤</div>
+      <div class="beyond-title">Speaker & Panelist</div>
+      <div class="beyond-desc">Keynote panelist at <strong>ElasticSearch CXO Fusion</strong> on Generative AI adoption. Guest lecturer at graduate universities. Regular podcast guest. Representing practical AI leadership in enterprise contexts.</div>
+      <div class="beyond-links">
+        <a href="https://drive.google.com/file/d/1DPyR_Edswyl2mnzIPM_BybiSBBbSxaAs/view" class="blink" target="_blank"><i class="ti ti-presentation"></i> Workshop snippet</a>
+      </div>
+    </div>
+
+    <div class="beyond-card">
+      <div class="beyond-icon" style="background:var(--teal-d);border-color:rgba(45,212,191,.2)">📹</div>
+      <div class="beyond-title">Content Creator</div>
+      <div class="beyond-desc">YouTube and Instagram creator simplifying Data Engineering and Generative AI for global audiences. Currently producing a video tutorial series on Data & AI. Focus: practical, applied content for practitioners and learners.</div>
+      <div class="beyond-links">
+      </div>
+    </div>
+
+    <div class="beyond-card">
+      <div class="beyond-icon" style="background:var(--purple-d);border-color:rgba(167,139,250,.2)">✍️</div>
+      <div class="beyond-title">Technical Writer & Editor</div>
+      <div class="beyond-desc">Freelance contributions to leading tech publications — in-depth features on AI, data engineering, and digital transformation. Covers technology from practitioner perspective, not just theoretical.</div>
+      <div class="platform-badges">
+        <span class="pbadge">Times of India</span><span class="pbadge">ToolsQA</span><span class="pbadge">Tech journals</span><span class="pbadge">e-magazines</span>
+      </div>
+    </div>
+
+    <div class="beyond-card">
+      <div class="beyond-icon" style="background:var(--amber-d);border-color:rgba(245,166,35,.2)">🏗️</div>
+      <div class="beyond-title">Corporate Trainer & Workshop Lead</div>
+      <div class="beyond-desc">Delivered PAN-India enterprise workshops and college masterclasses. Helped organisations transition from traditional data stacks to AI-driven architectures. Trained enterprise teams (Upward & Onward clients) and academic cohorts at graduate universities.</div>
+      <div class="beyond-links">
+        <a href="https://drive.google.com/file/d/1DPyR_Edswyl2mnzIPM_BybiSBBbSxaAs/view" class="blink" target="_blank"><i class="ti ti-external-link"></i> Sample session</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── CERTIFICATIONS ─────────────────────── -->
+<section id="certs" style="padding-top:0">
+  <div class="sec-label fade-up"><i class="ti ti-certificate"></i> Certifications</div>
+  <h2 class="sec-title fade-up">Professional Credentials</h2>
+  <div class="certs-grid fade-up">
+    <div class="cert-card"><div class="cert-dot"></div><div><div class="cert-name">Amazon Q Developer Fundamentals</div><div class="cert-issuer">Amazon Web Services</div><div class="cert-date">Oct 2025</div></div></div>
+    <div class="cert-card"><div class="cert-dot"></div><div><div class="cert-name">DAG Authoring for Apache Airflow 3</div><div class="cert-issuer">Astronomer</div><div class="cert-date">Oct 2025</div></div></div>
+    <div class="cert-card"><div class="cert-dot"></div><div><div class="cert-name">Apache Airflow Fundamentals</div><div class="cert-issuer">Astronomer</div><div class="cert-date">Jul 2025</div></div></div>
+    <div class="cert-card"><div class="cert-dot"></div><div><div class="cert-name">Generative AI Fundamentals</div><div class="cert-issuer">Databricks</div><div class="cert-date">Jul 2023</div></div></div>
+    <div class="cert-card"><div class="cert-dot"></div><div><div class="cert-name">Lakehouse Fundamentals</div><div class="cert-issuer">Databricks</div><div class="cert-date">Aug 2022</div></div></div>
+    <div class="cert-card"><div class="cert-dot"></div><div><div class="cert-name">Certified Associate Developer — Spark 3.0</div><div class="cert-issuer">Databricks</div><div class="cert-date">Jul 2022</div></div></div>
+    <div class="cert-card"><div class="cert-dot"></div><div><div class="cert-name">Apache Kafka Fundamentals</div><div class="cert-issuer">Confluent</div><div class="cert-date">Feb 2021</div></div></div>
+    <div class="cert-card"><div class="cert-dot"></div><div><div class="cert-name">Azure Fundamentals (AZ-900)</div><div class="cert-issuer">Microsoft</div><div class="cert-date">Aug 2020</div></div></div>
+    <div class="cert-card"><div class="cert-dot"></div><div><div class="cert-name">Teradata Vantage Associate</div><div class="cert-issuer">Teradata</div><div class="cert-date">Jun 2020</div></div></div>
+    <div class="cert-card"><div class="cert-dot"></div><div><div class="cert-name">Spark Level-1</div><div class="cert-issuer">IBM</div><div class="cert-date">Oct 2019</div></div></div>
+  </div>
+</section>
+
+<!-- ── CONTACT ─────────────────────────────── -->
+<section id="contact">
+  <div class="sec-label fade-up" style="justify-content:center"><i class="ti ti-send"></i> Contact</div>
+  <h2 class="sec-title fade-up" style="text-align:center">Let's Connect</h2>
+  <p class="sec-sub fade-up" style="text-align:center;margin:0 auto 0">Open to senior AI/Data architecture roles, advisory conversations, speaking engagements, and collaboration on open-source AI projects.</p>
+  <div class="contact-links fade-up">
+    <a class="contact-link" href="mailto:hardik.goel214@gmail.com"><i class="ti ti-mail"></i> hardik.goel214@gmail.com</a>
+    <a class="contact-link" href="https://www.linkedin.com/in/hardik-goel-a6334936/" target="_blank"><i class="ti ti-brand-linkedin"></i> LinkedIn</a>
+    <a class="contact-link" href="https://github.com/hardik-goel" target="_blank"><i class="ti ti-brand-github"></i> GitHub</a>
+    <a class="contact-link" href="tel:+919650129605"><i class="ti ti-phone"></i> +91-9650129605</a>
+  </div>
+</section>
+
+<footer>
+  <span style="color:var(--text3)">Hardik Goel ·  AI & Data Architect · Bangalore, India</span>
+  &nbsp;·&nbsp;
+</footer>
+
+<!-- ── CHAT WIDGET ───────────────────────────-->
+<button class="chat-btn" onclick="toggleChat()" aria-label="Chat with Hardik">
+  <i class="ti ti-message-circle-2"></i>
+</button>
+
+<!-- ── PHOTO WIDGET ─────────────────────────── -->
+<div class="photo-widget" onclick="toggleChat()" title="Chat with Hardik">
+  <img src="https://raw.githubusercontent.com/hardik-goel/hardik-portfolio/master/resources/hardik.jpg"
+       alt="Hardik Goel"
+       onerror="this.parentElement.style.background='linear-gradient(135deg,var(--blue),var(--teal))';this.style.display='none'">
+</div>
+
+<div class="chat-panel" id="chat-panel">
+  <div class="chat-ph">
+    <div class="chat-ph-info">
+      <div class="chat-avatar">HG</div>
+      <div>
+        <div class="chat-ph-name">Hardik Goel</div>
+        <div class="chat-ph-status">AI-powered · responds as Hardik</div>
+      </div>
+    </div>
+    <button class="chat-close" onclick="toggleChat()"><i class="ti ti-x"></i></button>
+  </div>
+  <div class="chat-msgs" id="chat-msgs">
+    <div class="cmsg bot">Hi! Ask me about my projects, architecture decisions, what I'm building, or anything in my background. Powered by AI.</div>
+  </div>
+  <div class="chat-chips" id="chat-chips">
+    <button class="cchip" onclick="sendSugg(this.textContent)">What's your biggest project right now?</button>
+    <button class="cchip" onclick="sendSugg(this.textContent)">Tell me about Switchboard's architecture</button>
+    <button class="cchip" onclick="sendSugg(this.textContent)">How did you cut Paytm's payment SLA?</button>
+  </div>
+  <div class="chat-input-wrap">
+    <input type="text" id="chat-input" placeholder="Ask Hardik anything…" onkeydown="if(event.key==='Enter')sendChat()">
+    <button class="chat-send" onclick="sendChat()"><i class="ti ti-send"></i></button>
+  </div>
+</div>
+
+<script>
+/* ── TYPING ANIMATION ──────────────────── */
+const TITLES=['Senior AI & Data Architect','MLOps Platform Owner','GenAI Systems Builder','AI Educator & Author','Open Source Contributor'];
+let ti=0,ci=0,del=false;
+function type(){
+  const el=document.getElementById('typing-text');
+  const cur=TITLES[ti];
+  if(del){el.textContent=cur.substring(0,--ci)}else{el.textContent=cur.substring(0,++ci)}
+  if(!del&&ci===cur.length){setTimeout(()=>{del=true},2200)}
+  else if(del&&ci===0){del=false;ti=(ti+1)%TITLES.length}
+  setTimeout(type,del?45:80);
+}
+type();
+
+/* ── SCROLL ANIMATIONS ──────────────────── */
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:.08});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+
+/* ── NAV ACTIVE ─────────────────────────── */
+const sections=document.querySelectorAll('section[id]');
+const navLinks=document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll',()=>{
+  let cur='';
+  sections.forEach(s=>{if(window.scrollY>=s.offsetTop-80)cur=s.id});
+  navLinks.forEach(a=>{a.classList.toggle('active',a.getAttribute('href')==='#'+cur)});
+  document.getElementById('main-nav').style.boxShadow=window.scrollY>10?'0 1px 24px rgba(0,0,0,.4)':'';
+},{passive:true});
+
+/* ── COLLAPSIBLE TIMELINE ───────────────── */
+function toggleDetails(btn){
+  const details=btn.nextElementSibling;
+  const open=details.classList.toggle('open');
+  btn.classList.toggle('open',open);
+  btn.innerHTML=open
+    ?'<i class="ti ti-chevron-down"></i> Hide details'
+    :'<i class="ti ti-chevron-down"></i> See full details';
+}
+
+/* ── BLOG FEEDS ─────────────────────────── */
+const BLOG_FEEDS={
+  substack:{
+    listId:'substack-posts',
+    sourceKey:'substack',
+    fallbackUrl:'https://goelh.substack.com/',
+    rssUrl:'https://goelh.substack.com/feed'
+  },
+  medium:{
+    listId:'medium-posts',
+    sourceKey:'medium',
+    fallbackUrl:'https://medium.com/@hardik.goel214',
+    rssUrl:'https://medium.com/feed/@hardik.goel214'
+  }
+};
+const BLOG_STATE={};
+const BLOG_VISIBLE_COUNT=2;
+
+function escapeHtml(str){
+  return str.replace(/[&<>"']/g,(ch)=>({
+    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+  })[ch]);
+}
+
+function fmtDate(dateStr){
+  const d=new Date(dateStr);
+  if(Number.isNaN(d.getTime()))return '';
+  return d.toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'});
+}
+
+function renderPosts(listId,items,fallbackUrl){
+  const list=document.getElementById(listId);
+  if(!list)return;
+  if(!items.length){
+    list.innerHTML=`<li class="blog-empty">No posts found right now. <a href="${fallbackUrl}" target="_blank" rel="noopener noreferrer">Open source page</a>.</li>`;
+    return;
+  }
+  const sourceKey=Object.keys(BLOG_FEEDS).find(k=>BLOG_FEEDS[k].listId===listId);
+  if(!sourceKey)return;
+  const state=BLOG_STATE[sourceKey]||{expanded:false,items:[]};
+  state.items=items.slice(0,8);
+  BLOG_STATE[sourceKey]=state;
+  const visibleItems=state.expanded?state.items:state.items.slice(0,BLOG_VISIBLE_COUNT);
+  list.innerHTML=visibleItems.map(item=>{
+    const title=escapeHtml(item.title||'Untitled post');
+    const link=item.link||fallbackUrl;
+    const date=fmtDate(item.pubDate||item.isoDate||'');
+    return `<li class="blog-item"><a href="${link}" target="_blank" rel="noopener noreferrer">${title}</a><div class="blog-meta">${date}</div></li>`;
+  }).join('');
+  const remaining=Math.max(state.items.length-BLOG_VISIBLE_COUNT,0);
+  const overflow=document.getElementById(`${sourceKey}-overflow`);
+  if(overflow){
+    overflow.textContent=!state.expanded&&remaining>0?`... +${remaining} more on the blog`:state.items.length>0?'':'';
+  }
+  const toggleBtn=document.querySelector(`[data-blog-toggle="${sourceKey}"]`);
+  if(toggleBtn){
+    const showToggle=state.items.length>BLOG_VISIBLE_COUNT;
+    toggleBtn.hidden=!showToggle;
+    if(showToggle){
+      toggleBtn.innerHTML=state.expanded
+        ?'Show less <i class="ti ti-chevron-up"></i>'
+        :'Show more <i class="ti ti-chevron-down"></i>';
+    }
+  }
+}
+
+function renderFeedError(listId,fallbackUrl){
+  const list=document.getElementById(listId);
+  if(!list)return;
+  list.innerHTML=`<li class="blog-empty">Could not load posts live. <a href="${fallbackUrl}" target="_blank" rel="noopener noreferrer">Read on platform</a>.</li>`;
+}
+
+function toggleBlogPosts(sourceKey){
+  const state=BLOG_STATE[sourceKey];
+  if(!state)return;
+  state.expanded=!state.expanded;
+  const config=BLOG_FEEDS[sourceKey];
+  renderPosts(config.listId,state.items,config.fallbackUrl);
+}
+
+document.querySelectorAll('[data-blog-toggle]').forEach(btn=>{
+  btn.addEventListener('click',()=>toggleBlogPosts(btn.dataset.blogToggle));
+});
+
+async function loadFeed({listId,fallbackUrl,rssUrl}){
+  try{
+    const endpoint=`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+    const res=await fetch(endpoint);
+    if(!res.ok)throw new Error('feed unavailable');
+    const data=await res.json();
+    const items=Array.isArray(data.items)?data.items:[];
+    renderPosts(listId,items,fallbackUrl);
+  }catch(e){
+    renderFeedError(listId,fallbackUrl);
+  }
+}
+
+loadFeed(BLOG_FEEDS.substack);
+loadFeed(BLOG_FEEDS.medium);
+
+/* ── CHAT WIDGET ────────────────────────── */
+const HARDIK_CTX=`You are Hardik Goel, a Senior AI & Data Architect with 13+ years experience based in Bangalore, India. Answer in first person, be confident and specific. Keep responses to 3-5 sentences unless detail is genuinely needed.
+
+KEY FACTS:
+- Currently Technical Architect SDE3 at Tesco (Jan 2025-present) — £3.5B commodity AI forecasting platform
+- Data Engineering Manager at Paytm (Jan 2022–Jan 2025) — 14-member team, SLA 15→3 days, attrition -40%, cost -50%+
+- Senior Software Engineer at Impetus (Feb 2020–Jan 2022) — ICON framework (-40% TAT, -90% errors), latency 2s→20ms
+- Cognizant Associate (Apr 2018–Jan 2020) — AML false positive reduction
+- Accenture Analyst (Oct 2014–Apr 2018) — telecom data pipelines
+
+PROJECTS: Switchboard (AI model routing OSS), AudioSummariser (GenAI audio + PyPI), CommodityBuddy (AI procurement), Enterprise AI Governance Platform (stealth), Agentic AI SaaS (active build), MCP server built from scratch
+
+TECH: LLMs, RAG, Vector DBs, MCP, Agentic AI, MLflow, SHAP, Azure ML, Spark, Kafka, Airflow, DBT, Databricks, AWS, Python, Java
+
+BEYOND: AI educator 8+ years (UpGrad, Analytics Vidhya, Ducat, GUVI, DataCouch, IK), book author (Forgotten By Design), YouTube/Instagram creator, keynote panelist at ElasticSearch CXO Fusion, corporate trainer PAN-India, writer for Times of India/ToolsQA
+
+For salary questions, say you prefer to discuss in proper conversations.`;
+
+let chatHistory=[];
+let chatOpen=false;
+
+function toggleChat(){
+  chatOpen=!chatOpen;
+  document.getElementById('chat-panel').classList.toggle('open',chatOpen);
+}
+
+function sendSugg(text){
+  document.getElementById('chat-input').value=text;
+  document.getElementById('chat-chips').style.display='none';
+  sendChat();
+}
+
+async function sendChat(){
+  const input=document.getElementById('chat-input');
+  const msgs=document.getElementById('chat-msgs');
+  const text=input.value.trim();
+  if(!text)return;
+  input.value='';
+
+  const uDiv=document.createElement('div');
+  uDiv.className='cmsg user';uDiv.textContent=text;msgs.appendChild(uDiv);
+
+  const tDiv=document.createElement('div');
+  tDiv.className='cmsg bot typing';tDiv.textContent='···';msgs.appendChild(tDiv);
+  msgs.scrollTop=msgs.scrollHeight;
+
+  chatHistory.push({role:'user',content:text});
+
+  try{
+    // Calls /api/chat — a Vercel serverless proxy to OpenRouter (free tier)
+    const res=await fetch('/api/chat',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        system:HARDIK_CTX,
+        messages:chatHistory
+      })
+    });
+    if(!res.ok){throw new Error('Server error: '+res.status)}
+    const data=await res.json();
+    const reply=data.content?.[0]?.text||'Something went wrong — please try again.';
+    chatHistory.push({role:'assistant',content:reply});
+    tDiv.className='cmsg bot';tDiv.textContent=reply;
+  }catch(e){
+    tDiv.className='cmsg bot';tDiv.textContent='Connection error. Please try again.';
+  }
+  msgs.scrollTop=msgs.scrollHeight;
+}
+</script>
+</body>
+</html>
